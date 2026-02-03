@@ -15,12 +15,12 @@
     <br>
 </div>
 
+> *No perceptual backbone, no discriminator, no auxiliary networks, and no additional ground-truth images.*
+
 <div align="center">
     <img src="images/teaser.png" width="700">
     <img src="images/teaser2.png" width="700">
 </div>
-
-
 
 
 
