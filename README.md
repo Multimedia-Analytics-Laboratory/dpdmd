@@ -14,11 +14,10 @@
     <br>
 </div>
 
-<br>
-
-[![arXiv](https://img.shields.io/badge/Arxiv-2602.02493-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2602.03139) 
 
 > *No perceptual backbone, no discriminator, no auxiliary networks, and no additional ground-truth images.*
+
+[![arXiv](https://img.shields.io/badge/Arxiv-2602.02493-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2602.03139) 
 
 
 <div align="center">
