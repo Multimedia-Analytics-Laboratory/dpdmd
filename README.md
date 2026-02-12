@@ -29,4 +29,4 @@
 
 </div align="center">
 
-Code will be released soon.
+Code will be released in Feb. Stay tuned! 🚀
