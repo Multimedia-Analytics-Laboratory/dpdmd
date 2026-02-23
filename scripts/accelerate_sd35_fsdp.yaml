@@ -1,0 +1,14 @@
+compute_environment: LOCAL_MACHINE # 或者 AMBIGUOUS / MULTI_GPU 
+distributed_type: FSDP 
+mixed_precision: bf16 # 你已经在 CLI 里用 bf16 的话，这里保持一致 
+num_processes: 8 # 例如 8 卡 
+use_cpu: false 
+fsdp_config: 
+  fsdp_auto_wrap_policy: TRANSFORMER_BASED_WRAP
+  fsdp_backward_prefetch: BACKWARD_PRE 
+  fsdp_sharding_strategy: FULL_SHARD 
+  fsdp_state_dict_type: FULL_STATE_DICT 
+  fsdp_offload_params: false 
+  fsdp_use_orig_params: true 
+  fsdp_activation_checkpointing: true 
+  fsdp_cpu_ram_efficient_loading: false

@@ -1,0 +1,36 @@
+accelerate launch \
+  --config_file scripts/accelerate_sd35_fsdp.yaml \
+  --mixed_precision bf16 \
+  train_sd35_dpdmd.py \
+  --teacher_id /home/notebook/data/group/wth/ddirl/weights/stabilityai/stable-diffusion-3.5-medium \
+  --student_id /home/notebook/data/group/wth/ddirl/weights/stabilityai/stable-diffusion-3.5-medium \
+  --fake_id /home/notebook/data/group/wth/ddirl/weights/stabilityai/stable-diffusion-3.5-medium \
+  --pick_processor_path /home/notebook/data/group/wth/ddirl/weights/CLIP-ViT-H-14-laion2B-s32B-b79K \
+  --pick_model_path /home/notebook/data/group/wth/ddirl/weights/PickScore_v1 \
+  --ir_model_path /home/notebook/data/group/wth/ddirl/weights/ImageReward/ImageReward.pt \
+  --ir_med_config /home/notebook/data/group/wth/ddirl/weights/ImageReward/med_config.json \
+  --dino_path /home/notebook/data/group/wth/ddirl/weights/dinov2-base \
+  --clip_path /home/notebook/data/group/wth/ddirl/weights/clip-vit-large-patch14 \
+  --prompt_txt data/diffusiondb.txt \
+  --log_path outputs/sd35_dpdmd/sd35m_t30_1024_lr1e5_4nfe_anchor5/log \
+  --ckpt_dir outputs/sd35_dpdmd/sd35m_t30_1024_lr1e5_4nfe_anchor5/ckpts \
+  --eval_dir outputs/sd35_dpdmd/sd35m_t30_1024_lr1e5_4nfe_anchor5/eval_images \
+  --process_folder_name outputs/sd35_dpdmd/sd35m_t30_1024_lr1e5_4nfe_anchor5/process_vis \
+  --diversity_folder_name outputs/sd35_dpdmd/sd35m_t30_1024_lr1e5_4nfe_anchor5/div_vis \
+  --height 1024 \
+  --width 1024 \
+  --teacher_infer_steps 30 \
+  --stu_inference_steps 4 \
+  --per_train_fake_num 5 \
+  --k_anchor 5 \
+  --batch_size 4 \
+  --grad_accum 1 \
+  --lr_student 1e-5 \
+  --lr_fake 1e-5 \
+  --div_weight 0.05 \
+  --weight_decay 0.0 \
+  --max_epoch 1 \
+  --log_every 1 \
+  --ckpt_every 100 \
+  --teacher_guidance_scale 3.5 \
+  --bf16
