@@ -171,7 +171,7 @@ Instructions for modifying paths or loading model weights are included within ea
 
 
 ## 💪 Acknowledgement
-I would like to sincerely thank [Gongye Liu](https://gongyeliu.github.io/), Ke Lei (Tsinghua University), and [Zhuoyan Luo](https://scholar.google.com/citations?user=mKQhEsIAAAAJ&hl=en&oi=ao) for the generous support of my project and for the invaluable guidance in the field of generative modeling.
+I would like to sincerely thank [Gongye Liu](https://gongyeliu.github.io/), Lei Ke (Tsinghua University), and [Zhuoyan Luo](https://scholar.google.com/citations?user=mKQhEsIAAAAJ&hl=en&oi=ao) for the generous support of my project and for the invaluable guidance in the field of generative modeling.
 
 
 ## 📧 Contact
