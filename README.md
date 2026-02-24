@@ -76,7 +76,7 @@ pipe = pipe.to("cuda:0")
 
 g_init = torch.Generator(device="cuda:0").manual_seed(5)
 image = pipe(
-    "a boy and a dog",
+    "a dog",
     num_inference_steps=4,
     guidance_scale=1.0,
     height=1024,
