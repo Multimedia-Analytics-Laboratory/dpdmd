@@ -764,12 +764,11 @@ def main():
                     cur_dino = (div_dino_pic + div_dino_coco) / 2
 
                     if cur_pickscore > best_pickscore and cur_imgr > best_imgr:
-                        if cur_clip > best_clip and cur_dino > best_dino:
-                            best_pickscore = cur_pickscore
-                            best_imgr = cur_imgr
-                            best_clip = cur_clip
-                            best_dino = cur_dino
-                            best_step = iteration
+                        best_pickscore = cur_pickscore
+                        best_imgr = cur_imgr
+                        best_clip = cur_clip
+                        best_dino = cur_dino
+                        best_step = iteration
 
             accelerator.wait_for_everyone()
         
