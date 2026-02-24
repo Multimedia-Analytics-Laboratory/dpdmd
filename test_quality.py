@@ -769,7 +769,7 @@ def predict_maniqa_batch_patches(
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--image_root", type=str, default="") # input the generated image folder path (please first test preference metrics, then use saved preference images folder)
-    parser.add_argument("--out", type=str, default="", help="Output txt path.")
+    parser.add_argument("--out", type=str, default="", help="Output txt path.") # input the output results path
     parser.add_argument("--device", type=str, default="cuda:0", help="cuda / cuda:0 / cpu. Default: auto.")
 
     # # download link (VisualQuality-R1): https://huggingface.co/TianheWu/VisualQuality-R1-7B

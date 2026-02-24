@@ -411,7 +411,7 @@ def _build_argparser():
     ap.add_argument("--model_ckpt_dir", type=str, default="") # input the transformer ckpt path
     ap.add_argument("--prompts_txt", type=str, default="") # input your test prompts
     ap.add_argument("--output_dir", type=str, default="") # input the generated images folder
-    ap.add_argument("--result_txt", type=str, default="./metric_results/eval_results_dpdmd_sd35.txt",
+    ap.add_argument("--result_txt", type=str, default="./metric_results/eval_results_dpdmd_sd35.txt", # input your stored path
                     help="write eval result to this txt; default: <output_dir>/eval_result.txt")
 
     ap.add_argument("--base_model_path", type=str, default="/home/notebook/data/group/wth/ddirl/weights/stabilityai/stable-diffusion-3.5-medium")
@@ -443,7 +443,7 @@ def main():
     args = ap.parse_args()
 
     accelerator = Accelerator()
-    res = evaluate_preference_from_checkpoint(
+    avg_ir, avg_pick = evaluate_preference_from_checkpoint(
         model_ckpt_dir=args.model_ckpt_dir,
         prompts_txt=args.prompts_txt,
         output_dir=args.output_dir,
@@ -464,9 +464,6 @@ def main():
         append_result=args.append_result,
         write_file=False
     )
-
-    # if accelerator.is_main_process:
-    #     print("[Eval-JSON]", res)
 
 
 if __name__ == "__main__":
