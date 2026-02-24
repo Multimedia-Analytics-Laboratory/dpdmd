@@ -58,10 +58,36 @@ During training, your model will be evaluated using **DINOv2**, **CLIP**, **Imag
 😊 Overall, three separate environments may be required: one for training and human preference evaluation (**ImageReward**, **PickScore**, **DINOv2** and **CLIP**), one for visual quality evaluation (**VisualQuality-R1** and **MANIQA**), and one for diversity evaluation (**DINOv3** and **CLIP**). If **DINOv3** is not used, only two environments are needed: one for training (including human preference evaluation) and one for visual quality evaluation.
 
 
-## ⚡ Qucik Inference
+## ⚡ Quick Inference
 
-soon..
+Run the following code to generate an image.
+```python
+import torch
+from PIL import Image
+from diffusers import StableDiffusion3Pipeline
 
+base_sd35_weight_path = "stable-diffusion-3.5-medium" # your path
+transformer_weight_path = "" # your path
+
+pipe = StableDiffusion3Pipeline.from_pretrained(base_sd35_weight_path, torch_dtype=torch.bfloat16)
+state_dict = torch.load(f"{transformer_weight_path}", map_location="cpu")
+missing, unexpected = pipe.transformer.load_state_dict(state_dict, strict=True)
+pipe = pipe.to("cuda:0")
+
+g_init = torch.Generator(device="cuda:0").manual_seed(5)
+image = pipe(
+    "a boy and a dog",
+    num_inference_steps=4,
+    guidance_scale=1.0,
+    height=1024,
+    width=1024,
+    generator=g_init
+).images[0]
+
+save_path = f"./demo.png"
+image.save(save_path)
+
+```
 
 
 ## 🚀 Training
@@ -138,6 +164,8 @@ Instructions for modifying paths or loading model weights are included within ea
 `accelerate launch --main_process_port 29512 test_preference.py`
 - Visual Quality:
 `python test_quality.py`
+    - [VisualQuality-R1](https://huggingface.co/TianheWu/VisualQuality-R1-7B) weight
+    - [MANIQA](https://huggingface.co/chaofengc/IQA-PyTorch-Weights/blob/main/MANIQA_PIPAL-ae6d356b.pth) weight
 - Diversity:
 `CUDA_VISIBLE_DEVICES=0 accelerate launch --main_process_port 29519 --num_processes 1 test_diversity.py`
 

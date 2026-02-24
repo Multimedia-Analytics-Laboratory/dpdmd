@@ -22,7 +22,7 @@ accelerate launch \
   --teacher_infer_steps 30 \
   --stu_inference_steps 4 \
   --per_train_fake_num 5 \
-  --k_anchor 5 \
+  --k_anchor 10 \
   --batch_size 4 \
   --grad_accum 1 \
   --lr_student 1e-5 \
