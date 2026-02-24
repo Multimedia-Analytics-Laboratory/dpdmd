@@ -414,7 +414,7 @@ def _build_argparser():
     ap.add_argument("--result_txt", type=str, default="./metric_results/eval_results_dpdmd_sd35.txt", # input your stored path
                     help="write eval result to this txt; default: <output_dir>/eval_result.txt")
 
-    ap.add_argument("--base_model_path", type=str, default="/home/notebook/data/group/wth/ddirl/weights/stabilityai/stable-diffusion-3.5-medium")
+    ap.add_argument("--base_model_path", type=str, default="/home/notebook/data/group/wth/ddirl/weights/stabilityai/stable-diffusion-3.5-medium") # change
 
     ap.add_argument("--guidance_scale", type=float, default=1.0)
     ap.add_argument("--resolution", type=int, default=1024)

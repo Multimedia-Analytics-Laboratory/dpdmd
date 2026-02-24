@@ -434,10 +434,10 @@ if __name__ == "__main__":
     
     accelerator = Accelerator(mixed_precision="bf16")
     avg_clip, div_clip, avg_dino, div_dino = evaluate_diversity_clip_and_dino_from_checkpoint_distributed(
-        base_model_skpt_dir="/home/notebook/data/group/wth/ddirl/weights/stabilityai/stable-diffusion-3.5-medium",
+        base_model_skpt_dir="/home/notebook/data/group/wth/ddirl/weights/stabilityai/stable-diffusion-3.5-medium", # change
         model_ckpt_dir="", # input your model skpt path
-        txt_path="data/pick2pic_sfw_test.txt",
-        output_dir="./div_test/dpdmd_sd35",
+        txt_path="data/pick2pic_sfw_test.txt", # change
+        output_dir="./div_test/dpdmd_sd35", # change
         accelerator=accelerator,
         guidance_scale=1.0,
         resolution=1024,
