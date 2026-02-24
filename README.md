@@ -60,7 +60,7 @@ During training, your model will be evaluated using **DINOv2**, **CLIP**, **Imag
 
 ## ⚡ Quick Inference
 
-Run the following code to generate an image.
+Run the following code to generate an image (Hugging Face model is trained SD3.5-M Transformer).
 ```python
 import torch
 from PIL import Image
