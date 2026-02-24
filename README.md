@@ -67,7 +67,7 @@ from PIL import Image
 from diffusers import StableDiffusion3Pipeline
 
 base_sd35_weight_path = "stable-diffusion-3.5-medium" # SD3.5-Medium weight path
-transformer_weight_path = "" # SD3.5-Medium Transformer weight path
+transformer_weight_path = "DPDMD-SD35M-4NFE-natural.pt" # SD3.5-Medium Transformer weight path
 
 pipe = StableDiffusion3Pipeline.from_pretrained(base_sd35_weight_path, torch_dtype=torch.bfloat16)
 state_dict = torch.load(f"{transformer_weight_path}", map_location="cpu")
