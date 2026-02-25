@@ -63,7 +63,6 @@ During training, your model will be evaluated using **DINOv2**, **CLIP**, **Imag
 Run the following code to generate an image (Hugging Face model is trained SD3.5-M Transformer).
 ```python
 import torch
-from PIL import Image
 from diffusers import StableDiffusion3Pipeline
 
 base_sd35_weight_path = "stable-diffusion-3.5-medium" # SD3.5-Medium weight path
