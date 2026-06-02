@@ -37,6 +37,8 @@
 
 </div align="center">
 
+## 🚀 News
+Our paper has been accepted in ICML 2026.
 
 ## ⚙️ Installation
 
